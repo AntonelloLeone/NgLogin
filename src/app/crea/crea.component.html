@@ -1,0 +1,37 @@
+<!-- create-article.component.html -->
+<div class="create-article-container">
+    <h2>Create New Article</h2>
+    <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input id="title" formControlName="title" type="text" />
+        <div *ngIf="articleForm.get('title')?.invalid && articleForm.get('title')?.touched">
+          Title is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input id="description" formControlName="description" type="text" />
+        <div *ngIf="articleForm.get('description')?.invalid && articleForm.get('description')?.touched">
+          Description is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="body">Body</label>
+        <textarea id="body" formControlName="body"></textarea>
+        <div *ngIf="articleForm.get('body')?.invalid && articleForm.get('body')?.touched">
+          Body is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="tagList">Tags (comma separated)</label>
+        <input id="tagList" formControlName="tagList" type="text" />
+      </div>
+  
+      <button type="submit" [disabled]="articleForm.invalid">Create Article</button>
+    </form>
+  </div>
+  

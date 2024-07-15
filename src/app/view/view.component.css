@@ -1,0 +1,94 @@
+/* view.component.css */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .styled-table th {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+  
+  .styled-table tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .styled-table tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #4CAF50;
+  }
+  
+  .styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .styled-table td ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .styled-table td ul li {
+    display: inline-block;
+    background-color: #e0e0e0;
+    padding: 2px 5px;
+    margin-right: 5px;
+    border-radius: 3px;
+  }
+  
+  .styled-table td div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .styled-table td img {
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .pagination button:not(:disabled):hover {
+    background-color: #45a049;
+  }
+  
+  .pagination span {
+    margin: 0 10px;
+  }
+  

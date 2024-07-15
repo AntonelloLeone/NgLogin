@@ -1,0 +1,68 @@
+<!-- view.component.html -->
+<div *ngIf="articles.length > 0; else noArticles">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Body</th>
+        <th>Tags</th>
+        <th>Created At</th>
+        <th>Author</th>
+        <th>Favorited</th>
+        <th>Favorites Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of articles">
+        <td>{{ truncateTitle(article.title, 20) }}</td>
+        <td>{{ article.description }}</td>
+        <td>{{ truncateText(article.body, 100) }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let tag of article.tagList">{{ tag }}</li>
+          </ul>
+        </td>
+        <td>{{ article.createdAt | date : "short" }}</td>
+        <td>
+          <div>
+            <img
+              [src]="article.author.image"
+              alt="Author's Image"
+              width="50"
+              height="50"
+            />
+            <span>{{ article.author.username }}</span>
+          </div>
+        </td>
+        <td>{{ article.favorited }}</td>
+        <td>{{ article.favoritesCount }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination">
+    <button (click)="changePage(1)" [disabled]="offset === 0">First</button>
+    <button
+      (click)="changePage(offset / limit + 1 - 1)"
+      [disabled]="offset === 0"
+    >
+      Previous
+    </button>
+    <span>Page {{ offset / limit + 1 }}</span>
+    <button
+      (click)="changePage(offset / limit + 1 + 1)"
+      [disabled]="offset + limit >= totalArticles"
+    >
+      Next
+    </button>
+    <button
+      (click)="changePage(Math.ceil(totalArticles / limit))"
+      [disabled]="offset + limit >= totalArticles"
+    >
+      Last
+    </button>
+  </div>
+</div>
+<ng-template #noArticles>
+  <p>No articles available.</p>
+</ng-template>

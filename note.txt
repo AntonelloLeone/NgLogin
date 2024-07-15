@@ -1,0 +1,22 @@
+for testing:
+    mail: nello@hotmail.it
+    password: nello
+----------------------------------------------------------------------------------
+
+
+
+* moduli principali del frontend
+    login,
+        remind me
+        -> ok - salvo il token
+            -> home page user_dynamic
+    register,
+        -> https, hide post header-payload-preview-response-OTHER*
+        -> protect data on storage.......token   
+    passwordProblem,
+
+* sarebbe utile una pagina dove testare accesso, autorizzazioni
+
+
+STRUTTURA DELLA SESSION ---------------------------------------------------------------
+** distinguere viste e operazioni per autenticazione/autorizzazione
